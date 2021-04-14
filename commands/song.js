@@ -11,7 +11,7 @@ exports.run = async (client, message) => {
 
   let queue = message.client.queue.get(message.guild.id);
   if (!queue)
-    return message.channel.send(":x: nada se está reproduciendo.")
+        return message.reply(":x: nada se está reproduciendo.")
     .then(msg => {
       msg.delete({ timeout: 7500 })
     });

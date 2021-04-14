@@ -7,13 +7,8 @@ exports.run = async (client, message, args) => {
 
   const queue = message.client.queue.get(message.guild.id);
   if (!queue)
-    return message.channel.send(
-      new MessageEmbed()
-        .setAuthor(
-          "Error al aleatorizar", " ")
-        .setDescription("** :x: No hay canciones para aleatorizar.**")
-        .setColor("cc6666")
-    ).then(msg => {
+    return message.reply(":x: no hay canciones para aleatorizar.")
+    .then(msg => {
       msg.delete({ timeout: 7500 })
     });
 
@@ -28,7 +23,7 @@ exports.run = async (client, message, args) => {
     .send(
       new MessageEmbed()
         .setAuthor("Aleatorización", " ")
-        .setDescription("** :twisted_rightwards_arrows: Cola aleatorizada.**")
+        .setDescription(":twisted_rightwards_arrows: cola aleatorizada.")
         .setColor("a6cad6")
     )
     .catch(console.error);

@@ -4,7 +4,7 @@ exports.run = async (client, message) => {
   const queue = message.client.queue.get(message.guild.id);
 
   if (!queue)
-    return message.channel.send(":x: nada se está reproduciendo.")
+        return message.reply(":x: nada se está reproduciendo.")
     .then(msg => {
       msg.delete({ timeout: 7500 })
     });
@@ -18,7 +18,7 @@ exports.run = async (client, message) => {
       )
 
       .setTimestamp()
-      .setDescription("**El bucle ha sido" +
-          (queue.loop == true ? " Activado " : " Desactivado ") + "para la actual reproducción :repeat: **")
+      .setDescription(":repeat: el bucle ha sido **" +
+          (queue.loop == true ? " Activado " : " Desactivado ") + "** para la actual reproducción.")
   );
 };

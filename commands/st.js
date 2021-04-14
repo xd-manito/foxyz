@@ -11,26 +11,20 @@ exports.run = async (client, message, args) => {
 
   let queue = message.client.queue.get(message.guild.id);
   if (!queue)
-    return message.channel.send(":x: nada se está reproduciendo.")
+        return message.reply(":x: nada se está reproduciendo.")
     .then(msg => {
       msg.delete({ timeout: 7500 })
     });
 
   if (!args[0])
-    return message.channel.send(
-      new MessageEmbed()
-        .setDescription(":x: necesitas especificar un número para saltar.")
-        .setColor("cc6666")
-    ).then(msg => {
-      msg.delete({ timeout: 10000 })
+    return message.reply(":x: necesitas especificar un número para saltar.")
+    .then(msg => {
+    msg.delete({ timeout: 10000 })
     });
 
   if (isNaN(args[0]))
-    return message.channel.send(
-      new MessageEmbed()
-        .setDescription(":x: el valor tiene que ser un número.")
-        .setColor("cc6666")
-    ).then(msg => {
+    return message.reply(":x: el valor tiene que ser un número.")
+    .then(msg => {
     msg.delete({ timeout: 10000 })
   });
 

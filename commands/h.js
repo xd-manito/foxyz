@@ -7,7 +7,7 @@ exports.run = async (client, message) => {
    pause\`\` - pausa la reproducción
    resume\`\` - continúa la reproducción pausada
    queue\`\` - muestra la cola de reproducción del servidor
-   skip\`\` - salta a la siguiente canción en cola
+   skip | next\`\` - salta a la siguiente canción en cola
    skipto <número>\`\` - salta múltiples veces hasta la reproducción indicada
    stop\`\` - detiene la reproducción y elimina la cola
    volume <número o nada>\`\` - ver o ajustar el volumen de las reproducciones

@@ -39,7 +39,7 @@ exports.run = async (client, message, args) => {
     try {
       const ytdata = await yt.getBasicInfo(query);
 
-      if (!ytdata) return errorReply("no se encontró ninguna canción con la URL dada");
+      if (!ytdata) return errorReply("no se encontró ninguna canción con la URL dada.");
       song = {
         name: Util.escapeMarkdown(ytdata.videoDetails.title),
         thumbnail:

@@ -15,7 +15,7 @@ exports.run = async (client, message, args) => {
     return message.channel.send(
       new MessageEmbed()
         .setAuthor( "Volumen", " ")
-        .setDescription("**El volumen actual es " + queue.volume + " **")
+        .setDescription("El volumen actual es **" + queue.volume + ".**")
     );
 
   if (args[0] > 100)
@@ -23,7 +23,7 @@ exports.run = async (client, message, args) => {
       new MessageEmbed()
         .setAuthor( "Controlador de volumen", " ")
         .setColor("cc6666")
-        .setDescription("**:x: el volumen no puede exeder de  100.**")
+        .setDescription(":x: el volumen no puede exeder de  **100.**")
     ).then(msg => {
       msg.delete({ timeout: 7500 })
     });
@@ -34,7 +34,7 @@ exports.run = async (client, message, args) => {
     new MessageEmbed()
       .setAuthor("Volumen"," ")
       .setColor("a6cad6")
-      .setDescription("**El volumen se ha cambiado a " + args[0] + ".** :white_check_mark:")
+      .setDescription(":white_check_mark: el volumen se ha cambiado a **" + args[0] + ".**")
   ).then(msg => {
     msg.delete({ timeout: 10000 })
   });

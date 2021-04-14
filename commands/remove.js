@@ -29,7 +29,7 @@ exports.run = async (client, message, args) => {
     });
 
   if (queue.queue.length == 1)
-    return message.reply(":x: no se puede eliminar si solo hay una canción, utiliza el comando `" +client.config.prefix + "stop`.**")
+    return message.reply(":x: no se puede eliminar si solo hay una canción, **utiliza el comando `" +client.config.prefix + "stop`.**")
     .then(msg => {
       msg.delete({ timeout: 7500 })
     });
@@ -41,11 +41,10 @@ exports.run = async (client, message, args) => {
     });
 
   if (!queue)
-    return message.channel.send(
-      new MessageEmbed()
-        .setDescription(":x: **There are no songs playing in this server**")
-        .setColor("cc6666")
-    );
+        return message.reply(":x: nada se está reproduciendo.")
+    .then(msg => {
+      msg.delete({ timeout: 7500 })
+    });
   var name = queue.queue[args[0] - 1].name;
   var url = queue.queue[args[0] - 1].url;
   queue.queue.splice(args[0] - 1);
